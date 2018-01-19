@@ -1,10 +1,12 @@
-public enum PowerState {
+package examples.enumdsc;
+
+public enum EnumStateWithDescription {
     OFF("Power is off"),
     ON("Power is on"),
     SUSPEND("Power usage is low");
 
     private String description;
-    private PowerState(String desc){
+    private EnumStateWithDescription(String desc){
         description = desc;
     }
 

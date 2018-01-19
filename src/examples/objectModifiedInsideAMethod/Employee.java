@@ -1,3 +1,5 @@
+package examples.objectModifiedInsideAMethod;
+
 public class Employee {
     String name = "";
 
