@@ -2,9 +2,13 @@ package lambda.ex;
 
 import model.Person;
 import model.PersonListCreator;
+import model.Seller;
 
 import java.util.List;
+import java.util.Random;
 import java.util.function.Consumer;
+import java.util.function.Function;
+import java.util.stream.Collectors;
 
 
 public class lambdaFunction {
@@ -15,15 +19,26 @@ public class lambdaFunction {
         System.out.println("-- initial list --");
         pList.forEach(p -> System.out.println(p.toString()));
 
-        class ConsumerEx implements Consumer<Person> {
+        class createSellers implements Function<Person, Seller> {
             @Override
-            public void accept(Person person) {
-                System.out.println("Id: "+person.getId()+" name: "+person.getName()+" age: "+person.getAge());
+            public Seller apply(Person person) {
+                final int itemSoldRand = new Random().nextInt(50);
+                return new Seller.SellerBuilder()
+                        .setId(person.getId())
+                        .setAge(person.getAge())
+                        .setName(person.getName())
+                        .setItemSold(itemSoldRand)
+                        .setTotalSale(itemSoldRand*100 + new Random().nextDouble())
+                        .build();
             }
         }
 
-        System.out.println("-- formated by the Consumer class --");
-        pList.forEach(new ConsumerEx());
+
+        System.out.println("-- sellers based on persons --");
+        List<Seller> sList = pList.stream().map(new createSellers()).collect(Collectors.toList());
+
+        sList.forEach(s -> System.out.println(s.toString()));
+
 
 
 

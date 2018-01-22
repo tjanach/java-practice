@@ -26,6 +26,17 @@ public class Seller extends Person {
         this.totalSale = b.totalSale;
     }
 
+    @Override
+    public String toString() {
+        return "Seller{" +
+                "id=" + getId() +
+                ", name=" + getName() +
+                ", age=" + getAge() +
+                ", itemSold=" + itemSold +
+                ", totalSale=" + String.format("%.02f", totalSale) +
+                '}';
+    }
+
     public static class SellerBuilder extends PersonBuilder {
         private int itemSold = 0;
         private double totalSale = 0.0;
