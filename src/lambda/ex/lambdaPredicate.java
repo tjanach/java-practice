@@ -1,17 +1,20 @@
 package lambda.ex;
 
+import model.Person;
+import model.PersonListCreator;
+
 import java.util.List;
 import java.util.function.Predicate;
 
 
 public class lambdaPredicate {
 
-
-
     public static void main(String[] args){
         List<Person> pList = PersonListCreator.getList();
 
+        System.out.println("-- initial list --");
         pList.forEach(p -> System.out.println(p.toString()));
+
         System.out.println("-- over 15 --");
         pList.stream()
                 .filter(p -> p.getAge()>15)

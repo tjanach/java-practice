@@ -1,4 +1,4 @@
-package lambda.ex;
+package model;
 
 
 public class Person {
@@ -40,30 +40,30 @@ public class Person {
                 '}';
     }
 
-    public Person(Builder b){
+    public Person(PersonBuilder b){
         this.id = b.id;
         this.name = b.name;
         this.age = b.age;
     }
 
-    public static class Builder{
+    public static class PersonBuilder {
         private long id = 0L;
         private String name ="";
         private int age = 0;
 
-        public Builder(){}
+        public PersonBuilder(){}
 
-        public Builder setId(long id){
+        public PersonBuilder setId(long id){
             this.id = id;
             return this;
         }
 
-        public Builder setName(String name){
+        public PersonBuilder setName(String name){
             this.name = name;
             return this;
         }
 
-        public Builder setAge(int age){
+        public PersonBuilder setAge(int age){
             this.age = age;
             return this;
         }

@@ -1,19 +1,19 @@
-package lambda.ex;
+package model;
 
 public class PersonBuilderDemo {
     public static void main(String[] args){
 
-        Person p1 = new Person.Builder()
+        Person p1 = new Person.PersonBuilder()
                 .setId(1)
                 .setName("Carl Mion")
                 .setAge(10)
                 .build();
-        Person p2 = new Person.Builder()
+        Person p2 = new Person.PersonBuilder()
                 .setId(2)
                 .setName("Mickey Brown")
                 .setAge(11)
                 .build();
-        Person p3 = new Person.Builder()
+        Person p3 = new Person.PersonBuilder()
                 .setId(2)
                 .setName("Carl Gustaw")
                 .setAge(81)
