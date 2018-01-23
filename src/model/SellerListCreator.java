@@ -6,7 +6,7 @@ import java.util.List;
 public class SellerListCreator {
 
     public static List<Seller> getList() {
-        List<Seller> sList = new ArrayList<Seller>();
+        List<Seller> sList = new ArrayList<>();
 
         sList.add(new Seller.SellerBuilder()
                 .setId(1)

@@ -1,4 +1,4 @@
-package lambda.ex;
+package lambda.demos;
 
 import model.Person;
 import model.PersonListCreator;
@@ -7,7 +7,7 @@ import java.util.List;
 import java.util.function.Predicate;
 
 
-public class lambdaPredicate {
+public class LambdaPredicate {
 
     public static void main(String[] args){
         List<Person> pList = PersonListCreator.getList();

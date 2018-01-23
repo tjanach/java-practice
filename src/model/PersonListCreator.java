@@ -6,7 +6,7 @@ import java.util.List;
 public class PersonListCreator {
 
     public static List<Person> getList() {
-        List<Person> pList = new ArrayList<Person>();
+        List<Person> pList = new ArrayList<>();
         pList.add(new Person.PersonBuilder()
                 .setId(1)
                 .setName("James Gordon")

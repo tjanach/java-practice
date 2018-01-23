@@ -1,4 +1,4 @@
-package examples.objectModifiedInsideAMethod;
+package examples;
 
 public class NewObjectInMethod {
 

@@ -1,4 +1,4 @@
-package lambda.ex;
+package lambda.demos;
 
 import model.Person;
 import model.PersonListCreator;
@@ -7,7 +7,7 @@ import java.util.List;
 import java.util.function.Consumer;
 
 
-public class lambdaConsumer {
+public class LambdaConsumer {
 
     public static void main(String[] args){
         List<Person> pList = PersonListCreator.getList();
@@ -23,7 +23,7 @@ public class lambdaConsumer {
         System.out.println("-- added 3 to ages again --");
         pList.forEach(add3ToAge.andThen(p -> System.out.println(p.toString())));
 
-        class shiftIdsBy100 implements Consumer<Person>{
+        class ShiftIdsBy100 implements Consumer<Person>{
             @Override
             public void accept(Person person) {
                 person.setId(person.getId()*100);
@@ -31,11 +31,11 @@ public class lambdaConsumer {
         }
 
         System.out.println("-- id multiplied by 100 --");
-        pList.forEach(new shiftIdsBy100().andThen(p -> System.out.println(p.toString())));
+        pList.forEach(new ShiftIdsBy100().andThen(p -> System.out.println(p.toString())));
 
         System.out.println("-- id multiplied by 100 for the last 2 elements--");
         pList.stream().filter(p->p.getId()>300)
-                .forEach(new shiftIdsBy100().andThen(p -> System.out.println(p.toString())));
+                .forEach(new ShiftIdsBy100().andThen(p -> System.out.println(p.toString())));
 
         System.out.println("-- final list --");
         pList.forEach(p -> System.out.println(p.toString()));

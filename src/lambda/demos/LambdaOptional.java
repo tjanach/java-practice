@@ -1,4 +1,4 @@
-package lambda.ex;
+package lambda.demos;
 
 import model.Person;
 import model.PersonListCreator;
@@ -8,7 +8,7 @@ import java.util.List;
 import java.util.Optional;
 
 
-public class lambdaOptional {
+public class LambdaOptional {
 
     public static void main(String[] args){
         List<Person> pList = PersonListCreator.getList();
