@@ -1,4 +1,4 @@
-package examples.threads.pool;
+package examples.threads;
 
 public class ThreadSleepCount extends Thread{
     private long sleepPeriod = 500;
@@ -6,6 +6,12 @@ public class ThreadSleepCount extends Thread{
 
     public ThreadSleepCount(String name, String msg, long sleepPeriod){
         super(name);
+        this.sleepPeriod = sleepPeriod;
+        this.msg = msg;
+    }
+
+    public ThreadSleepCount(ThreadGroup tg, String name, String msg, long sleepPeriod){
+        super(tg, name);
         this.sleepPeriod = sleepPeriod;
         this.msg = msg;
     }
